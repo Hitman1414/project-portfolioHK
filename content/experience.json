@@ -1,0 +1,119 @@
+[
+  {
+    "id": "exp-01",
+    "role": "Assistant Professor",
+    "organization": "Srinivas University",
+    "department": "Department of Management / MBA",
+    "location": "Mangaluru, Karnataka, India",
+    "startDate": "August 2026",
+    "endDate": "Present",
+    "current": true,
+    "highlights": [
+      "Lecturing post-graduate MBA students in Marketing Management, Strategic Management, and Consumer Behaviour.",
+      "Conducting ongoing research in AI-driven conversational interfaces, e-commerce customer engagement, and digital commerce strategies.",
+      "Mentoring academic projects, student development initiatives, and curriculum advancement."
+    ]
+  },
+  {
+    "id": "exp-02",
+    "role": "Assistant Professor",
+    "organization": "Acharya Institute of Technology (Acharya Institutes)",
+    "department": "Department of MBA",
+    "location": "Bengaluru, Karnataka, India",
+    "startDate": "June 2022",
+    "endDate": "July 2026",
+    "current": false,
+    "highlights": [
+      "Built strong rapport with MBA students through active classroom discussions and academic advisement.",
+      "Evaluated student performance through comprehensive assessment strategies, providing targeted feedback for intellectual growth.",
+      "Fostered critical thinking and intellectual exploration while contributing actively to campus academic initiatives."
+    ]
+  },
+  {
+    "id": "exp-03",
+    "role": "Assistant Professor",
+    "organization": "BMS College of Commerce and Management (BMSCCM)",
+    "department": "Management & Commerce Department",
+    "location": "Bengaluru, Karnataka, India",
+    "startDate": "May 2021",
+    "endDate": "June 2022",
+    "current": false,
+    "highlights": [
+      "Faculty Coordinator of the Entrepreneurship Cell (E-Cell, BMSCCM), driving student innovation programs.",
+      "Contributed to departmental committees focused on curriculum development, assessment strategies, and accreditation requirements.",
+      "Delivered core undergraduate and postgraduate management courses."
+    ]
+  },
+  {
+    "id": "exp-04",
+    "role": "Assistant Professor",
+    "organization": "Aditya Institute of Management and Research (AIMSR)",
+    "department": "Management Department",
+    "location": "Bengaluru, Karnataka, India",
+    "startDate": "September 2020",
+    "endDate": "April 2021",
+    "current": false,
+    "highlights": [
+      "Created interactive course materials and practical case study exercises to illustrate core management concepts.",
+      "Mentored students on career advancement, placement readiness, and corporate internship opportunities.",
+      "Participated in national conferences, academic webinars, and subject workshops."
+    ]
+  },
+  {
+    "id": "exp-05",
+    "role": "Assistant Professor",
+    "organization": "Sri Krishnan P G College",
+    "department": "Management Department",
+    "location": "Uttar Pradesh, India",
+    "startDate": "January 2019",
+    "endDate": "December 2019",
+    "current": false,
+    "highlights": [
+      "Delivered undergraduate lectures in business administration, marketing fundamentals, and organizational management.",
+      "Designed lesson plans and academic evaluation rubrics."
+    ]
+  },
+  {
+    "id": "exp-06",
+    "role": "Techno Functional Analyst / Business Analyst",
+    "organization": "IDFC FIRST Bank",
+    "department": "Banking Technology & Solutions",
+    "location": "Mumbai, Maharashtra, India",
+    "startDate": "June 2018",
+    "endDate": "January 2019",
+    "current": false,
+    "highlights": [
+      "Mapped client business requirements into functional specs and technology solution architectures.",
+      "Evaluated competitor banking product offerings to identify unaddressed user needs and feature gaps.",
+      "Recommended technology-enabled solutions for enhancing operational efficiency."
+    ]
+  },
+  {
+    "id": "exp-07",
+    "role": "Intern",
+    "organization": "Hindustan Coca-Cola Beverages (HCCB)",
+    "department": "Retail Market Research",
+    "location": "Varanasi, Uttar Pradesh, India",
+    "startDate": "December 2017",
+    "endDate": "December 2017",
+    "current": false,
+    "highlights": [
+      "Conducted retail trade surveys identifying commercial outlets without visi-coolers and evaluating placement potential.",
+      "Gained hands-on exposure to FMCG distribution, retail sales dynamics, and field market research."
+    ]
+  },
+  {
+    "id": "exp-08",
+    "role": "Summer Intern",
+    "organization": "Small Farmers Agri-Business Consortium (SFAC)",
+    "department": "Ministry of Agriculture & Farmers Welfare, Govt of India",
+    "location": "New Delhi, India",
+    "startDate": "May 2017",
+    "endDate": "June 2017",
+    "current": false,
+    "highlights": [
+      "Conducted field-based empirical research on e-NAM (National Agriculture Market) adoption and farmer opinion surveys.",
+      "Analyzed the intersection of digital agricultural markets, policy implementation, and technology adoption in rural trade."
+    ]
+  }
+]

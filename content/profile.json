@@ -1,0 +1,29 @@
+{
+  "name": "Dr. Harshita Kaushik",
+  "title": "Assistant Professor & Academic Researcher",
+  "department": "Department of Management / MBA",
+  "institution": "Srinivas University",
+  "location": "Mangaluru, Karnataka, India",
+  "email": "harshitakaushik2409@gmail.com",
+  "phone": "9118209724",
+  "linkedin": "https://www.linkedin.com/in/dr-harshita-kaushik-897210240",
+  "phd": {
+    "degree": "Ph.D. in Management",
+    "institution": "Tumkur University",
+    "location": "Tumkur, Karnataka",
+    "year": 2026,
+    "month": "February",
+    "topic": "Impact of Artificial Intelligence and Conversational Interfaces on E-Commerce companies- An evaluation of customer’s engagement in Bengaluru city"
+  },
+  "qualifications": [
+    "UGC NET Qualified (Management) – 2020",
+    "KSET Qualified (Management) – 2020"
+  ],
+  "languages": [
+    { "name": "English", "proficiency": "Proficient / Full Professional" },
+    { "name": "Hindi", "proficiency": "Proficient / Native or Bilingual" },
+    { "name": "Kannada", "proficiency": "Beginner / Elementary" }
+  ],
+  "heroStatement": "Researching how artificial intelligence and conversational interfaces change customer engagement in digital commerce.",
+  "summary": "Academician and management educator passionate about teaching, student development, and meaningful learning experiences. Currently Assistant Professor at Srinivas University, focusing on nurturing students' academic and personal growth. With a Ph.D. in Management from Tumkur University and an MBA from Banaras Hindu University, her research spans artificial intelligence, conversational commerce, consumer behavior, and targeted marketing."
+}

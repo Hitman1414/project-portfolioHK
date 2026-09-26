@@ -1,0 +1,82 @@
+[
+  {
+    "id": "tch-01",
+    "code": "MGMT-701",
+    "title": "Marketing Management",
+    "category": "Core Marketing",
+    "level": "Postgraduate (MBA) / UG",
+    "description": "Foundational principles of marketing strategy, market segmentation, targeting, positioning, and customer value creation."
+  },
+  {
+    "id": "tch-02",
+    "code": "STRAT-702",
+    "title": "Corporate Strategy",
+    "category": "Strategy & Leadership",
+    "level": "Postgraduate (MBA)",
+    "description": "Strategic analysis, competitive positioning, corporate portfolio management, and sustainable competitive advantage."
+  },
+  {
+    "id": "tch-03",
+    "code": "ENTR-703",
+    "title": "Entrepreneurship Development & Legal Aspects",
+    "category": "Entrepreneurship",
+    "level": "Postgraduate (MBA) / UG",
+    "description": "Venture creation, entrepreneurial ecosystem dynamics, regulatory compliance, legal frameworks, and business plan execution."
+  },
+  {
+    "id": "tch-04",
+    "code": "STRAT-704",
+    "title": "Strategic Management",
+    "category": "Strategy & Leadership",
+    "level": "Postgraduate (MBA)",
+    "description": "Industry structure analysis, internal capability evaluation, strategic implementation, and organizational transformation."
+  },
+  {
+    "id": "tch-05",
+    "code": "MKTG-705",
+    "title": "Digital Marketing Management",
+    "category": "Digital Commerce & Tech",
+    "level": "Postgraduate (MBA) / UG",
+    "description": "Omnichannel digital strategies, search engine optimization, content marketing, social media algorithms, and performance analytics."
+  },
+  {
+    "id": "tch-06",
+    "code": "MKTG-706",
+    "title": "Consumer Behaviour",
+    "category": "Consumer Research",
+    "level": "Postgraduate (MBA) / UG",
+    "description": "Psychological, social, and cognitive drivers of consumer decision-making, perception, memory, and digital purchase behavior."
+  },
+  {
+    "id": "tch-07",
+    "code": "MKTG-707",
+    "title": "Integrated Marketing Communication",
+    "category": "Core Marketing",
+    "level": "Postgraduate (MBA) / UG",
+    "description": "Coordinated brand communication across advertising, public relations, promotional channels, and interactive digital interfaces."
+  },
+  {
+    "id": "tch-08",
+    "code": "MKTG-708",
+    "title": "Services Marketing",
+    "category": "Core Marketing",
+    "level": "Postgraduate (MBA) / UG",
+    "description": "Service design, service quality frameworks (SERVQUAL), customer experience blueprints, and relationship management."
+  },
+  {
+    "id": "tch-09",
+    "code": "HRM-709",
+    "title": "Human Resource Management",
+    "category": "Organizational Behaviour",
+    "level": "Postgraduate (MBA) / UG",
+    "description": "Talent acquisition, performance management systems, organizational development, and employee engagement."
+  },
+  {
+    "id": "tch-10",
+    "code": "FIN-710",
+    "title": "Indian Financial System",
+    "category": "Financial Systems",
+    "level": "Undergraduate / MBA",
+    "description": "Structure of banking, non-banking financial institutions, money markets, capital markets, and regulatory frameworks in India."
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "edu-01",
+    "degree": "Ph.D. in Management",
+    "field": "Management (AI & Conversational E-Commerce)",
+    "institution": "Tumkur University",
+    "location": "Tumkur, Karnataka, India",
+    "year": 2026,
+    "month": "February",
+    "details": "Dissertation: 'Impact of Artificial Intelligence and Conversational Interfaces on E-Commerce companies- An evaluation of customer’s engagement in Bengaluru city'."
+  },
+  {
+    "id": "edu-02",
+    "degree": "Master of Business Administration (MBA)",
+    "field": "Marketing",
+    "institution": "Institute of Management Studies, Banaras Hindu University (BHU)",
+    "location": "Varanasi, Uttar Pradesh, India",
+    "year": 2018,
+    "month": "January",
+    "gpa": "CGPA 8.3",
+    "details": "Specialization in Marketing Management, Strategic Brand Building, and Consumer Insights."
+  },
+  {
+    "id": "edu-03",
+    "degree": "Bachelor of Science (B.Sc.)",
+    "field": "Botany / Biological Sciences",
+    "institution": "Institute of Science, Banaras Hindu University (BHU)",
+    "location": "Varanasi, Uttar Pradesh, India",
+    "year": 2016,
+    "month": "January",
+    "gpa": "CGPA 7.3",
+    "details": "Foundational scientific inquiry, quantitative methods, and analytical reasoning."
+  },
+  {
+    "id": "edu-04",
+    "degree": "Secondary Education (10th CBSE)",
+    "field": "General Science & Mathematics",
+    "institution": "St. Patrick's Sr. Sec. School",
+    "location": "Jaunpur, Uttar Pradesh, India",
+    "year": 2011,
+    "month": "March",
+    "gpa": "84.6%",
+    "details": "CBSE Board Examination."
+  },
+  {
+    "id": "edu-05",
+    "degree": "Senior Secondary Education (12th CBSE)",
+    "field": "Science Stream",
+    "institution": "St. Patrick's Sr. Sec. School",
+    "location": "Jaunpur, Uttar Pradesh, India",
+    "year": 2009,
+    "month": "March",
+    "gpa": "72.4%",
+    "details": "CBSE Board Examination."
+  }
+]

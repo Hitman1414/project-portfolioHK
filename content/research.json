@@ -1,0 +1,110 @@
+[
+  {
+    "id": "res-01",
+    "slug": "ai-conversational-interfaces-ecommerce",
+    "title": "Artificial Intelligence & Conversational Interfaces in E-Commerce",
+    "category": "Core PhD Research",
+    "summary": "Evaluation of how AI chatbots, voice assistants, and conversational UI drive customer engagement in urban e-commerce ecosystems (Bengaluru City).",
+    "description": "Her primary doctoral dissertation examines the empirical impact of artificial intelligence and conversational interfaces on e-commerce platforms. The research analyzes consumer interaction patterns, trust, friction points, and customer engagement metrics across major digital commerce services in Bengaluru.",
+    "themes": [
+      "Artificial Intelligence",
+      "Conversational Interfaces",
+      "Customer Engagement",
+      "E-Commerce",
+      "Bengaluru City"
+    ],
+    "relatedPublications": ["pub-04", "pub-05", "pub-08"],
+    "featured": true,
+    "nodes": [
+      { "id": "n1", "label": "ARTIFICIAL INTELLIGENCE", "level": 1 },
+      { "id": "n2", "label": "CONVERSATIONAL INTERFACES", "level": 2 },
+      { "id": "n3", "label": "CUSTOMER ENGAGEMENT", "level": 3 },
+      { "id": "n4", "label": "DIGITAL COMMERCE", "level": 4 },
+      { "id": "n5", "label": "BENGALURU CITY", "level": 5 }
+    ]
+  },
+  {
+    "id": "res-02",
+    "slug": "personalized-marketing-privacy",
+    "title": "Personalization vs. Privacy in Targeted Marketing",
+    "category": "AI & Ethics in Marketing",
+    "summary": "Balancing algorithmic customer tailoring with data privacy safeguards and consumer ethical concerns.",
+    "description": "Investigating how AI-enabled hyper-personalization creates value for e-commerce algorithms while evaluating customer privacy boundaries, data transparency, and targeted advertising consent.",
+    "themes": [
+      "AI Personalization",
+      "Data Ethics",
+      "Targeted Marketing",
+      "Consumer Privacy"
+    ],
+    "relatedPublications": ["pub-04", "pub-07"],
+    "featured": true,
+    "nodes": [
+      { "id": "n6", "label": "AI PERSONALIZATION", "level": 1 },
+      { "id": "n7", "label": "DATA PRIVACY", "level": 2 },
+      { "id": "n8", "label": "TARGETED MARKETING", "level": 3 }
+    ]
+  },
+  {
+    "id": "res-03",
+    "slug": "mobile-gamification-consumer-behaviour",
+    "title": "Mobile App Gamification & Consumer Behaviour",
+    "category": "Retail & App Engagement",
+    "summary": "Assessing the structural effects of gamified mobile app features on customer engagement and retail loyalty.",
+    "description": "Analyzing how interactive app mechanics, rewards, and conversational triggers influence consumer decision-making and continuous app usage in retail services.",
+    "themes": [
+      "Gamification",
+      "Mobile Applications",
+      "Retail Industry",
+      "Customer Loyalty"
+    ],
+    "relatedPublications": ["pub-05", "pub-06"],
+    "featured": true,
+    "nodes": [
+      { "id": "n9", "label": "GAMIFICATION", "level": 1 },
+      { "id": "n10", "label": "RETAIL APPS", "level": 2 },
+      { "id": "n11", "label": "CUSTOMER LOYALTY", "level": 3 }
+    ]
+  },
+  {
+    "id": "res-04",
+    "slug": "emerging-technologies-ar-voice",
+    "title": "Augmented Reality & Voice Assistants in Retail",
+    "category": "Emerging Technologies",
+    "summary": "Examining user preferences, challenges, and experiential transformations driven by AR and voice shopping.",
+    "description": "Research on next-generation shopping interfaces, focusing on how voice assistant workflows and AR visualization enhance customer trial, preference, and satisfaction in online shopping.",
+    "themes": [
+      "Augmented Reality",
+      "Voice Assistants",
+      "Shopping Experience",
+      "Emerging Tech"
+    ],
+    "relatedPublications": ["pub-08", "pub-09"],
+    "featured": true,
+    "nodes": [
+      { "id": "n12", "label": "AUGMENTED REALITY", "level": 1 },
+      { "id": "n13", "label": "VOICE ASSISTANTS", "level": 2 },
+      { "id": "n14", "label": "SHOPPING TRANSFORMATION", "level": 3 }
+    ]
+  },
+  {
+    "id": "res-05",
+    "slug": "generation-z-entrepreneurship-finance",
+    "title": "Generation Z Financial Awareness & Women Entrepreneurship",
+    "category": "Consumer Trends & Education",
+    "summary": "Exploring Gen Z financial behavior towards mutual funds and the role of academic institutions in modeling women entrepreneurs.",
+    "description": "Studies on Gen Z financial decision-making, mutual fund awareness, and structural institutional frameworks that foster women entrepreneurship and leadership.",
+    "themes": [
+      "Generation Z",
+      "Mutual Funds",
+      "Women Entrepreneurship",
+      "Higher Education"
+    ],
+    "relatedPublications": ["pub-01", "pub-02", "pub-03"],
+    "featured": false,
+    "nodes": [
+      { "id": "n15", "label": "GENERATION Z", "level": 1 },
+      { "id": "n16", "label": "MUTUAL FUNDS", "level": 2 },
+      { "id": "n17", "label": "WOMEN ENTREPRENEURSHIP", "level": 3 }
+    ]
+  }
+]

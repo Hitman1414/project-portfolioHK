@@ -1,0 +1,23 @@
+{
+  "siteTitle": "Dr. Harshita Kaushik | Academic & Research Portfolio",
+  "tagline": "AI, Marketing & Consumer Behaviour Research Lab",
+  "description": "Academic research portfolio of Dr. Harshita Kaushik — Assistant Professor at Srinivas University, exploring the intersection of artificial intelligence, conversational interfaces, consumer behaviour, and digital commerce.",
+  "url": "https://harshitakaushik.com",
+  "author": "Dr. Harshita Kaushik",
+  "currentRole": "Assistant Professor, Department of Management / MBA, Srinivas University",
+  "location": "Mangaluru, Karnataka, India",
+  "navigation": [
+    { "label": "01 RESEARCH", "href": "/research" },
+    { "label": "02 PUBLICATIONS", "href": "/publications" },
+    { "label": "03 TEACHING", "href": "/teaching" },
+    { "label": "04 ACADEMIC JOURNEY", "href": "/experience" },
+    { "label": "05 INNOVATION", "href": "/patents" },
+    { "label": "06 ABOUT", "href": "/about" },
+    { "label": "07 CV", "href": "/cv" },
+    { "label": "08 CONTACT", "href": "/contact" }
+  ],
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/dr-harshita-kaushik-897210240",
+    "email": "harshitakaushik2409@gmail.com"
+  }
+}
