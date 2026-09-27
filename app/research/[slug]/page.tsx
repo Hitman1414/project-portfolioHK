@@ -83,15 +83,17 @@ export default function ResearchDetailPage({ params }: { params: { slug: string 
                   className="p-6 rounded-2xl glass-panel border border-border space-y-3"
                 >
                   <div className="flex items-center justify-between font-mono text-xs text-muted-foreground">
-                    <span className="text-accent font-semibold">{pub.year}</span>
-                    <span>{pub.venue}</span>
+                    {pub.year ? <span className="text-accent font-semibold">{pub.year}</span> : <span />}
+                    {pub.venue && <span>{pub.venue}</span>}
                   </div>
                   <h4 className="font-serif text-xl font-normal text-foreground">
                     {pub.title}
                   </h4>
-                  <p className="text-sm text-muted-foreground font-serif italic">
-                    {pub.abstract}
-                  </p>
+                  {pub.abstract && (
+                    <p className="text-sm text-muted-foreground font-serif italic">
+                      {pub.abstract}
+                    </p>
+                  )}
                   <div className="pt-2 flex justify-end font-mono text-xs">
                     <Link
                       href={`/publications/${pub.slug}`}

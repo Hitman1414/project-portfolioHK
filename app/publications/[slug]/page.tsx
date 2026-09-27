@@ -26,10 +26,12 @@ export default function PublicationDetailPage({ params }: { params: { slug: stri
       {/* Title & Metadata Header */}
       <div className="space-y-6 border-b border-border/60 pb-8">
         <div className="flex flex-wrap items-center gap-3 font-mono text-xs">
-          <span className="px-3 py-1 rounded-full bg-accent text-accent-foreground font-semibold">
-            YEAR {pub.year}
-          </span>
-          <span className="text-muted-foreground">{pub.venue}</span>
+          {pub.year && (
+            <span className="px-3 py-1 rounded-full bg-accent text-accent-foreground font-semibold">
+              YEAR {pub.year}
+            </span>
+          )}
+          {pub.venue && <span className="text-muted-foreground">{pub.venue}</span>}
         </div>
 
         <h1 className="font-serif text-3xl sm:text-5xl font-normal text-foreground leading-tight">
@@ -41,22 +43,26 @@ export default function PublicationDetailPage({ params }: { params: { slug: stri
             <User className="w-3.5 h-3.5 text-accent" />
             <span className="text-foreground">{pub.authors.join(', ')}</span>
           </div>
-          <div className="flex items-center space-x-1">
-            <Calendar className="w-3.5 h-3.5 text-accent" />
-            <span>{pub.year}</span>
-          </div>
+          {pub.year && (
+            <div className="flex items-center space-x-1">
+              <Calendar className="w-3.5 h-3.5 text-accent" />
+              <span>{pub.year}</span>
+            </div>
+          )}
         </div>
       </div>
 
       {/* Abstract & Body */}
-      <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-border space-y-6">
-        <h2 className="font-mono text-xs text-muted-foreground uppercase tracking-widest">
-          Paper Abstract
-        </h2>
-        <p className="font-serif text-xl text-foreground/90 leading-relaxed italic">
-          &quot;{pub.abstract}&quot;
-        </p>
-      </div>
+      {pub.abstract && (
+        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-border space-y-6">
+          <h2 className="font-mono text-xs text-muted-foreground uppercase tracking-widest">
+            Paper Abstract
+          </h2>
+          <p className="font-serif text-xl text-foreground/90 leading-relaxed italic">
+            &quot;{pub.abstract}&quot;
+          </p>
+        </div>
+      )}
 
       {/* Keywords & Areas */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">

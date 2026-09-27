@@ -6,7 +6,7 @@ import { GraduationCap, ArrowUpRight, BookOpen } from 'lucide-react';
 
 interface Subject {
   id: string;
-  code: string;
+  code?: string;
   title: string;
   category: string;
   level: string;
@@ -33,11 +33,11 @@ export function TeachingIndex({ subjects }: TeachingIndexProps) {
             Teaching Index
           </h2>
           <p className="text-muted-foreground text-sm max-w-xl">
-            10 core MBA & undergraduate management subjects delivered across marketing strategy, digital commerce, consumer insights, and financial systems.
+            Core MBA & undergraduate management subjects delivered across marketing strategy, digital commerce, consumer insights, and financial systems.
           </p>
         </div>
         <div className="font-mono text-xs text-muted-foreground bg-muted/50 px-4 py-2 rounded-full border border-border/60">
-          INDEXED // 10 SUBJECTS
+          INDEXED // {subjects.length} SUBJECTS
         </div>
       </div>
 
@@ -91,7 +91,7 @@ export function TeachingIndex({ subjects }: TeachingIndexProps) {
                     {sub.title}
                   </h3>
                   <div className="font-mono text-[11px] text-muted-foreground">
-                    {sub.level} · {sub.code}
+                    {sub.level}{sub.code ? ` · ${sub.code}` : ''}
                   </div>
                 </div>
 

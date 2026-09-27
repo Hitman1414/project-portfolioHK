@@ -22,7 +22,7 @@ const PublicationSchema = z.array(
     id: z.string(),
     slug: z.string(),
     title: z.string().min(1),
-    year: z.number(),
+    year: z.number().optional(),
   })
 );
 

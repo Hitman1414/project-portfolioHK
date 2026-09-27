@@ -10,9 +10,9 @@ interface Publication {
   slug: string;
   title: string;
   authors: string[];
-  year: number;
-  venue: string;
-  abstract: string;
+  year?: number;
+  venue?: string;
+  abstract?: string;
   keywords: string[];
   researchAreas: string[];
   featured: boolean;
@@ -34,12 +34,13 @@ export function PublicationIndex({ publications, showTitle = true }: Publication
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
   const handleCopyCitation = (pub: Publication, type: 'apa' | 'bibtex') => {
+    const year = pub.year ?? 'n.d.';
     let citation = '';
     if (type === 'apa') {
-      citation = `${pub.authors.join(', ')} (${pub.year}). ${pub.title}. ${pub.venue}.`;
+      citation = `${pub.authors.join(', ')} (${year}). ${pub.title}.${pub.venue ? ` ${pub.venue}.` : ''}`;
     } else {
-      const citeKey = `${pub.authors[0]?.split(' ').pop()?.toLowerCase() || 'paper'}${pub.year}`;
-      citation = `@article{${citeKey},\n  title={${pub.title}},\n  author={${pub.authors.join(' and ')}},\n  journal={${pub.venue}},\n  year={${pub.year}}\n}`;
+      const citeKey = `${pub.authors[0]?.split(' ').pop()?.toLowerCase() || 'paper'}${pub.year ?? ''}`;
+      citation = `@article{${citeKey},\n  title={${pub.title}},\n  author={${pub.authors.join(' and ')}},\n  year={${year}}${pub.venue ? `,\n  journal={${pub.venue}}` : ''}\n}`;
     }
     navigator.clipboard.writeText(citation);
     setCopiedId(`${pub.id}-${type}`);
@@ -47,16 +48,16 @@ export function PublicationIndex({ publications, showTitle = true }: Publication
   };
 
   // Extract unique years and research areas
-  const years = Array.from(new Set(publications.map((p) => p.year.toString()))).sort((a, b) => b.localeCompare(a));
+  const years = Array.from(new Set(publications.filter((p) => p.year).map((p) => p.year!.toString()))).sort((a, b) => b.localeCompare(a));
   const areas = Array.from(new Set(publications.flatMap((p) => p.researchAreas))).sort();
 
   const filteredPublications = publications.filter((pub) => {
     const matchesQuery =
       pub.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      pub.abstract.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (pub.abstract && pub.abstract.toLowerCase().includes(searchQuery.toLowerCase())) ||
       pub.keywords.some((k) => k.toLowerCase().includes(searchQuery.toLowerCase()));
 
-    const matchesYear = selectedYear === 'ALL' || pub.year.toString() === selectedYear;
+    const matchesYear = selectedYear === 'ALL' || (pub.year && pub.year.toString() === selectedYear);
     const matchesArea = selectedArea === 'ALL' || pub.researchAreas.includes(selectedArea);
 
     return matchesQuery && matchesYear && matchesArea;
@@ -75,7 +76,7 @@ export function PublicationIndex({ publications, showTitle = true }: Publication
               Publications Archive
             </h2>
             <p className="text-muted-foreground text-sm max-w-xl">
-              Chronological index of 9 peer-reviewed publications across AI marketing, conversational commerce, Gen Z finance, and emerging retail technologies.
+              Chronological index of peer-reviewed publications across AI marketing, conversational commerce, Gen Z finance, and emerging retail technologies.
             </p>
           </div>
           <div className="font-mono text-xs text-muted-foreground bg-muted/50 px-4 py-2 rounded-full border border-border/60">
@@ -192,10 +193,14 @@ export function PublicationIndex({ publications, showTitle = true }: Publication
                 {/* Left Number & Year */}
                 <div className="md:col-span-2 font-mono text-xs text-muted-foreground flex items-center space-x-3">
                   <span className="text-accent font-semibold">{paperNum}</span>
-                  <span className="text-border">/</span>
-                  <span className="text-foreground font-semibold px-2 py-0.5 rounded bg-muted">
-                    {pub.year}
-                  </span>
+                  {pub.year && (
+                    <>
+                      <span className="text-border">/</span>
+                      <span className="text-foreground font-semibold px-2 py-0.5 rounded bg-muted">
+                        {pub.year}
+                      </span>
+                    </>
+                  )}
                 </div>
 
                 {/* Center Title & Tags */}
@@ -211,8 +216,8 @@ export function PublicationIndex({ publications, showTitle = true }: Publication
                     {pub.title}
                   </h3>
                   <div className="flex flex-wrap items-center gap-2 font-mono text-[11px] text-muted-foreground">
-                    <span className="text-foreground/80 font-sans font-medium">{pub.venue}</span>
-                    <span className="text-border">•</span>
+                    {pub.venue && <span className="text-foreground/80 font-sans font-medium">{pub.venue}</span>}
+                    {pub.venue && <span className="text-border">•</span>}
                     <span>{pub.authors.join(', ')}</span>
                   </div>
                 </div>
@@ -239,10 +244,12 @@ export function PublicationIndex({ publications, showTitle = true }: Publication
                     className="overflow-hidden pt-6 mt-4 border-t border-border/40 font-sans text-sm text-foreground/90 space-y-4"
                   >
                     <div className="p-5 rounded-2xl glass-panel space-y-4 bg-muted/40">
-                      <div>
-                        <h4 className="font-mono text-xs text-muted-foreground uppercase mb-1">Abstract</h4>
-                        <p className="leading-relaxed font-serif text-base text-foreground/90">{pub.abstract}</p>
-                      </div>
+                      {pub.abstract && (
+                        <div>
+                          <h4 className="font-mono text-xs text-muted-foreground uppercase mb-1">Abstract</h4>
+                          <p className="leading-relaxed font-serif text-base text-foreground/90">{pub.abstract}</p>
+                        </div>
+                      )}
 
                       {/* Keywords */}
                       <div className="space-y-2 pt-2 border-t border-border/40">

@@ -55,9 +55,9 @@ export const PublicationSchema = z.object({
   slug: z.string(),
   title: z.string(),
   authors: z.array(z.string()),
-  year: z.number(),
-  venue: z.string(),
-  abstract: z.string(),
+  year: z.number().optional(),
+  venue: z.string().optional(),
+  abstract: z.string().optional(),
   keywords: z.array(z.string()),
   researchAreas: z.array(z.string()),
   featured: z.boolean(),
@@ -98,7 +98,7 @@ export const EducationListSchema = z.array(EducationSchema);
 
 export const TeachingSchema = z.object({
   id: z.string(),
-  code: z.string(),
+  code: z.string().optional(),
   title: z.string(),
   category: z.string(),
   level: z.string(),
@@ -110,12 +110,12 @@ export const TeachingListSchema = z.array(TeachingSchema);
 export const PatentSchema = z.object({
   id: z.string(),
   title: z.string(),
-  inventors: z.array(z.string()),
-  category: z.string(),
-  abstract: z.string(),
-  status: z.string(),
-  year: z.number(),
-  highlights: z.array(z.string()),
+  inventors: z.array(z.string()).optional(),
+  category: z.string().optional(),
+  abstract: z.string().optional(),
+  status: z.string().optional(),
+  year: z.number().optional(),
+  highlights: z.array(z.string()).optional(),
 });
 
 export const PatentListSchema = z.array(PatentSchema);

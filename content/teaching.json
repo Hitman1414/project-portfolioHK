@@ -1,7 +1,6 @@
 [
   {
     "id": "tch-01",
-    "code": "MGMT-701",
     "title": "Marketing Management",
     "category": "Core Marketing",
     "level": "Postgraduate (MBA) / UG",
@@ -9,7 +8,6 @@
   },
   {
     "id": "tch-02",
-    "code": "STRAT-702",
     "title": "Corporate Strategy",
     "category": "Strategy & Leadership",
     "level": "Postgraduate (MBA)",
@@ -17,7 +15,6 @@
   },
   {
     "id": "tch-03",
-    "code": "ENTR-703",
     "title": "Entrepreneurship Development & Legal Aspects",
     "category": "Entrepreneurship",
     "level": "Postgraduate (MBA) / UG",
@@ -25,7 +22,6 @@
   },
   {
     "id": "tch-04",
-    "code": "STRAT-704",
     "title": "Strategic Management",
     "category": "Strategy & Leadership",
     "level": "Postgraduate (MBA)",
@@ -33,7 +29,6 @@
   },
   {
     "id": "tch-05",
-    "code": "MKTG-705",
     "title": "Digital Marketing Management",
     "category": "Digital Commerce & Tech",
     "level": "Postgraduate (MBA) / UG",
@@ -41,7 +36,6 @@
   },
   {
     "id": "tch-06",
-    "code": "MKTG-706",
     "title": "Consumer Behaviour",
     "category": "Consumer Research",
     "level": "Postgraduate (MBA) / UG",
@@ -49,7 +43,6 @@
   },
   {
     "id": "tch-07",
-    "code": "MKTG-707",
     "title": "Integrated Marketing Communication",
     "category": "Core Marketing",
     "level": "Postgraduate (MBA) / UG",
@@ -57,7 +50,6 @@
   },
   {
     "id": "tch-08",
-    "code": "MKTG-708",
     "title": "Services Marketing",
     "category": "Core Marketing",
     "level": "Postgraduate (MBA) / UG",
@@ -65,7 +57,6 @@
   },
   {
     "id": "tch-09",
-    "code": "HRM-709",
     "title": "Human Resource Management",
     "category": "Organizational Behaviour",
     "level": "Postgraduate (MBA) / UG",
@@ -73,7 +64,6 @@
   },
   {
     "id": "tch-10",
-    "code": "FIN-710",
     "title": "Indian Financial System",
     "category": "Financial Systems",
     "level": "Undergraduate / MBA",

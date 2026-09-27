@@ -6,12 +6,12 @@ import { Cpu, Award, ShieldCheck, Network, Layers } from 'lucide-react';
 interface Patent {
   id: string;
   title: string;
-  inventors: string[];
-  category: string;
-  abstract: string;
-  status: string;
-  year: number;
-  highlights: string[];
+  inventors?: string[];
+  category?: string;
+  abstract?: string;
+  status?: string;
+  year?: number;
+  highlights?: string[];
 }
 
 interface InnovationProps {
@@ -38,7 +38,7 @@ export function InnovationSection({ patents }: InnovationProps) {
           </p>
         </div>
         <div className="font-mono text-xs text-accent bg-accent/10 px-4 py-2 rounded-full border border-accent/30 font-semibold">
-          REGISTERED PATENT // {patent.year}
+          REGISTERED PATENT{patent.year ? ` // ${patent.year}` : ''}
         </div>
       </div>
 
@@ -58,34 +58,40 @@ export function InnovationSection({ patents }: InnovationProps) {
             <span className="px-3 py-1 rounded-full bg-accent text-accent-foreground font-semibold">
               INNOVATION 01
             </span>
-            <span className="px-3 py-1 rounded-full bg-muted text-muted-foreground border border-border">
-              {patent.category}
-            </span>
-            <span className="text-muted-foreground">• STATUS: {patent.status}</span>
+            {patent.category && (
+              <span className="px-3 py-1 rounded-full bg-muted text-muted-foreground border border-border">
+                {patent.category}
+              </span>
+            )}
+            {patent.status && <span className="text-muted-foreground">• STATUS: {patent.status}</span>}
           </div>
 
           <h3 className="font-serif text-2xl sm:text-4xl font-normal text-foreground leading-snug">
             &quot;{patent.title}&quot;
           </h3>
 
-          <p className="font-sans text-base sm:text-lg text-foreground/80 leading-relaxed">
-            {patent.abstract}
-          </p>
+          {patent.abstract && (
+            <p className="font-sans text-base sm:text-lg text-foreground/80 leading-relaxed">
+              {patent.abstract}
+            </p>
+          )}
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-border/40">
-            {patent.highlights.map((h, i) => (
-              <div key={i} className="p-4 rounded-2xl bg-muted/40 border border-border/60 space-y-2">
-                <div className="font-mono text-xs text-accent font-semibold flex items-center space-x-2">
-                  <ShieldCheck className="w-4 h-4" />
-                  <span>KEY ARCHITECTURE 0{i + 1}</span>
+          {patent.highlights && patent.highlights.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-border/40">
+              {patent.highlights.map((h, i) => (
+                <div key={i} className="p-4 rounded-2xl bg-muted/40 border border-border/60 space-y-2">
+                  <div className="font-mono text-xs text-accent font-semibold flex items-center space-x-2">
+                    <ShieldCheck className="w-4 h-4" />
+                    <span>KEY ARCHITECTURE 0{i + 1}</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{h}</p>
                 </div>
-                <p className="text-xs text-muted-foreground leading-relaxed">{h}</p>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
 
           <div className="pt-4 flex flex-wrap items-center justify-between font-mono text-xs text-muted-foreground border-t border-border/40">
-            <div>INVENTORS: {patent.inventors.join(', ')}</div>
+            {patent.inventors && patent.inventors.length > 0 && <div>INVENTORS: {patent.inventors.join(', ')}</div>}
             <div>VERIFIED SOURCE: LINKEDIN REGISTERED PATENT</div>
           </div>
         </div>

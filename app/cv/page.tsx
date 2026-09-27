@@ -150,11 +150,14 @@ export default function CVPage() {
           </h3>
 
           <ol className="space-y-4 list-decimal list-inside font-sans text-xs text-foreground/90">
-            {publications.map((pub: any) => (
-              <li key={pub.id} className="leading-relaxed font-serif text-sm">
-                <span className="font-semibold">{pub.title}.</span> ({pub.year}). <em>{pub.venue}</em>. Authors: {pub.authors.join(', ')}.
-              </li>
-            ))}
+            {publications.map((pub: any) => {
+              const year = pub.year ?? 'n.d.';
+              return (
+                <li key={pub.id} className="leading-relaxed font-serif text-sm">
+                  <span className="font-semibold">{pub.title}.</span> ({year}).{pub.venue ? <> <em>{pub.venue}</em>.</> : ''} Authors: {pub.authors.join(', ')}.
+                </li>
+              );
+            })}
           </ol>
         </div>
 
@@ -181,7 +184,11 @@ export default function CVPage() {
             </h3>
             <div className="p-4 rounded-xl bg-muted/40 border border-border/60 space-y-1 font-mono text-xs">
               <div className="text-foreground font-semibold">{patents[0].title}</div>
-              <div className="text-muted-foreground">{patents[0].category} · Status: {patents[0].status}</div>
+              {[patents[0].category, patents[0].status && `Status: ${patents[0].status}`].filter(Boolean).length > 0 && (
+                <div className="text-muted-foreground">
+                  {[patents[0].category, patents[0].status && `Status: ${patents[0].status}`].filter(Boolean).join(' · ')}
+                </div>
+              )}
             </div>
           </div>
         )}

@@ -2,15 +2,6 @@
   {
     "id": "pat-01",
     "title": "An integrated hardware-software system and iot-driven micro-node architecture for decentralized hyperlocal packet distribution and live inventory synchronization",
-    "inventors": ["Dr. Harshita Kaushik et al."],
-    "category": "IoT & Hyperlocal Logistics Architecture",
-    "abstract": "A novel decentralized architectural system combining hardware sensors, micro-node edge compute units, and real-time software synchronization for hyperlocal packet routing and live inventory tracking.",
-    "status": "Patent Published / Registered",
-    "year": 2024,
-    "highlights": [
-      "Micro-node edge architecture for real-time inventory updates across distributed fulfillment points.",
-      "Decentralized packet routing algorithms optimizing last-mile delivery efficiency.",
-      "Hardware-software integration for IoT-enabled logistics tracking."
-    ]
+    "inventors": ["Dr. Harshita Kaushik"]
   }
 ]
