@@ -26,17 +26,6 @@ module.exports = {
           foreground: 'var(--accent-foreground)',
           glow: 'var(--accent-glow)',
         },
-        accent2: {
-          DEFAULT: 'var(--accent-2)',
-          glow: 'var(--accent-2-glow)',
-        },
-        teal: {
-          400: '#2dd4bf',
-          500: '#14b8a6',
-          600: '#0d9488',
-          700: '#0f766e',
-          900: '#134e4a',
-        },
       },
       fontFamily: {
         serif: ['var(--font-serif)', 'Playfair Display', 'Cormorant Garamond', 'serif'],

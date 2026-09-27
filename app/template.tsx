@@ -16,7 +16,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
         className="fixed inset-0 z-[100] bg-accent pointer-events-none"
       />
 
-      {/* Secondary Gold Trail Curtain */}
+      {/* Secondary Trail Curtain */}
       <motion.div
         initial={{ y: '100%' }}
         animate={{ y: '-100%' }}
@@ -25,7 +25,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
           delay: 0.04,
           ease: [0.76, 0, 0.24, 1],
         }}
-        className="fixed inset-0 z-[99] bg-accent2 pointer-events-none"
+        className="fixed inset-0 z-[99] bg-muted pointer-events-none"
       />
 
       {/* Incoming Page Content Rise & Fade */}

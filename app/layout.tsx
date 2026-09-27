@@ -54,7 +54,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-accent-foreground">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <SmoothScroll>
             <div className="flex flex-col min-h-screen">
               <Header />

@@ -7,7 +7,6 @@ import { useRef, useState, useEffect } from 'react';
 import { ArrowDownRight, Award, BookOpen, GraduationCap, Network, ChevronDown } from 'lucide-react';
 
 import { MouseGlow } from '@/components/MouseGlow';
-import { AsciiParticleMatrix } from '@/components/AsciiParticleMatrix';
 
 interface HeroProps {
   profile: {
@@ -47,12 +46,11 @@ export function HeroExperience({ profile }: HeroProps) {
 
   return (
     <section ref={sectionRef} className="relative min-h-[90vh] pt-32 pb-20 px-6 max-w-7xl mx-auto flex flex-col justify-between overflow-hidden z-0">
-      {/* Tactile Film Grain Noise Background + ASCII Particle Matrix & Soft Ambient Light Orbs */}
+      {/* Tactile Film Grain Noise Background + Soft Ambient Light Orbs */}
       <div className="absolute inset-0 bg-noise pointer-events-none z-0 opacity-80" />
-      <AsciiParticleMatrix />
       <MouseGlow />
       <div className="absolute top-1/4 left-1/6 w-[32rem] h-[32rem] bg-accent/15 rounded-full blur-[120px] pointer-events-none z-0 animate-pulse-subtle" />
-      <div className="absolute bottom-10 right-10 w-[28rem] h-[28rem] bg-accent2/15 rounded-full blur-[120px] pointer-events-none z-0" />
+      <div className="absolute bottom-10 right-10 w-[28rem] h-[28rem] bg-accent/10 rounded-full blur-[120px] pointer-events-none z-0" />
 
       {/* Top Identity Meta Bar */}
       <motion.div
@@ -97,7 +95,7 @@ export function HeroExperience({ profile }: HeroProps) {
                     animate={{ width: 'auto', opacity: 1, scale: 1 }}
                     transition={{ duration: 0.95, delay: 0.35, ease: [0.76, 0, 0.24, 1] }}
                     className="inline-flex overflow-hidden rounded-2xl sm:rounded-3xl border-2 border-accent/50 shadow-2xl shadow-accent/20 h-14 sm:h-20 md:h-24 lg:h-28 aspect-[1.35/1] shrink-0 relative align-middle group cursor-pointer"
-                    whileHover={{ scale: 1.04, borderColor: 'var(--accent-2)' }}
+                    whileHover={{ scale: 1.04, borderColor: 'var(--accent)' }}
                   >
                     <Image
                       src={profile.photo.src}

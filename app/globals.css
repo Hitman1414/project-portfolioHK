@@ -5,18 +5,16 @@
 @tailwind utilities;
 
 :root {
-  --background: #f7f6f2;
-  --foreground: #111318;
+  --background: #faf9f5;
+  --foreground: #262624;
   --card: #ffffff;
-  --card-foreground: #111318;
-  --muted: #e7e5e0;
-  --muted-foreground: #4b4f58;
-  --border: #dfdcd5;
-  --accent: #0f766e;
+  --card-foreground: #262624;
+  --muted: #f0eee6;
+  --muted-foreground: #78766f;
+  --border: #e5e1d8;
+  --accent: #c96442;
   --accent-foreground: #ffffff;
-  --accent-glow: rgba(15, 118, 110, 0.15);
-  --accent-2: #d4a72c;
-  --accent-2-glow: rgba(212, 167, 44, 0.15);
+  --accent-glow: rgba(201, 100, 66, 0.14);
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -30,11 +28,9 @@
   --muted: #171922;
   --muted-foreground: #9da3b4;
   --border: #232632;
-  --accent: #14b8a6;
+  --accent: #e0824f;
   --accent-foreground: #0b0c0e;
-  --accent-glow: rgba(20, 184, 166, 0.22);
-  --accent-2: #eab308;
-  --accent-2-glow: rgba(234, 179, 8, 0.22);
+  --accent-glow: rgba(224, 130, 79, 0.22);
 }
 
 * {
@@ -70,7 +66,7 @@ h1, h2, h3, .font-serif-editorial {
   font-family: var(--font-mono);
 }
 
-/* Reusable Typography Scale Classes (Part B1) */
+/* Reusable Typography Scale Classes */
 .text-display {
   font-family: var(--font-serif);
   font-size: clamp(2.5rem, 5vw + 1rem, 5.5rem);
@@ -92,7 +88,7 @@ h1, h2, h3, .font-serif-editorial {
   display: block;
   width: 48px;
   height: 2px;
-  background: var(--accent-2);
+  background: var(--accent);
   margin-top: 0.5rem;
   border-radius: 1px;
 }
@@ -154,15 +150,15 @@ h1, h2, h3, .font-serif-editorial {
   border-radius: 1rem;
   overflow: hidden;
   border: 1.5px solid var(--accent);
-  box-shadow: 0 10px 30px -10px var(--accent-glow), 0 0 20px -5px var(--accent-2-glow);
+  box-shadow: 0 10px 30px -10px var(--accent-glow);
 }
 
-/* Part C2: Client Portrait Frame (Natural color photo with Teal->Gold gradient ring) */
+/* Client Portrait Frame */
 .portrait-frame {
   position: relative;
   border-radius: 1.25rem;
   padding: 3px;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  background: var(--accent);
 }
 
 .portrait-frame img {
@@ -177,9 +173,7 @@ h1, h2, h3, .font-serif-editorial {
   position: absolute;
   inset: -40px;
   z-index: -1;
-  background:
-    radial-gradient(circle at 30% 20%, var(--accent-glow), transparent 60%),
-    radial-gradient(circle at 75% 80%, var(--accent-2-glow), transparent 60%);
+  background: radial-gradient(circle at 50% 50%, var(--accent-glow), transparent 70%);
   filter: blur(40px);
   pointer-events: none;
 }
@@ -213,7 +207,7 @@ h1, h2, h3, .font-serif-editorial {
   height: 1.5px;
   bottom: -1px;
   left: 0;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  background: var(--accent);
   transform-origin: bottom right;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -275,4 +269,3 @@ h1, h2, h3, .font-serif-editorial {
     padding: 0 !important;
   }
 }
-

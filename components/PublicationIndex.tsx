@@ -207,7 +207,7 @@ export function PublicationIndex({ publications, showTitle = true }: Publication
                 <div className="md:col-span-8 space-y-2">
                   <div className="flex items-center space-x-2">
                     {pub.featured && (
-                      <span className="font-mono text-[10px] uppercase font-semibold px-2 py-0.5 rounded-full bg-accent2/10 text-accent2 border border-accent2/30">
+                      <span className="font-mono text-[10px] uppercase font-semibold px-2 py-0.5 rounded-full bg-accent/10 text-accent border border-accent/30">
                         ★ FEATURED RESEARCH
                       </span>
                     )}

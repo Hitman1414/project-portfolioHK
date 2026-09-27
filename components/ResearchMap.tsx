@@ -97,13 +97,13 @@ export function ResearchMap({ topics }: ResearchMapProps) {
                   style={{ top: `${node.y}%`, left: `${node.x}%` }}
                   className={`absolute p-4 rounded-2xl transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accent ${
                     isSelected
-                      ? 'bg-accent2 text-black font-semibold shadow-lg shadow-amber-500/20 z-20 border border-accent2'
+                      ? 'bg-accent text-accent-foreground font-semibold shadow-lg shadow-accent/20 z-20 border border-accent'
                       : 'bg-card text-foreground hover:border-accent hover:text-accent border border-border/80 shadow-sm'
                   }`}
                   aria-pressed={isSelected}
                   aria-label={`Explore research topic: ${node.label}`}
                 >
-                  <div className={`font-mono text-[10px] tracking-wider uppercase mb-0.5 ${isSelected ? 'text-black/80 font-bold' : 'text-accent'}`}>
+                  <div className={`font-mono text-[10px] tracking-wider uppercase mb-0.5 ${isSelected ? 'text-accent-foreground/90 font-bold' : 'text-accent'}`}>
                     {node.sub}
                   </div>
                   <div className="font-serif text-sm sm:text-base font-semibold leading-tight whitespace-nowrap">

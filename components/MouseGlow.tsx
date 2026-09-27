@@ -42,7 +42,7 @@ export function MouseGlow({ className = '' }: MouseGlowProps) {
       className={`absolute inset-0 pointer-events-none z-0 transition-opacity duration-500 ease-out ${className}`}
       style={{
         opacity,
-        background: `radial-gradient(450px circle at ${position.x}px ${position.y}px, rgba(20, 184, 166, 0.16) 0%, rgba(234, 179, 8, 0.09) 40%, transparent 80%)`,
+        background: `radial-gradient(450px circle at ${position.x}px ${position.y}px, var(--accent-glow) 0%, transparent 70%)`,
       }}
     />
   );

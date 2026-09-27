@@ -1,12 +1,10 @@
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { MouseGlow } from '@/components/MouseGlow';
-import { AsciiParticleMatrix } from '@/components/AsciiParticleMatrix';
 
 export function Footer() {
   return (
     <footer className="relative border-t border-border/60 bg-background/50 pt-20 pb-12 transition-colors duration-300 overflow-hidden z-0">
-      <AsciiParticleMatrix />
       <MouseGlow />
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
         <div className="md:col-span-6 space-y-6">
