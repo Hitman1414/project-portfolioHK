@@ -58,7 +58,7 @@ export function ResearchMap({ topics }: ResearchMapProps) {
       {/* Desktop Canvas Visualization */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         {/* Visual Map Canvas (Desktop/Tablet) */}
-        <div className="lg:col-span-7 glass-panel rounded-3xl p-6 sm:p-8 relative min-h-[460px] flex flex-col justify-between overflow-hidden bg-tech-grid">
+        <div className="lg:col-span-7 glass-panel rounded-3xl p-6 sm:p-8 relative min-h-[460px] flex flex-col justify-between overflow-hidden bg-noise">
           <div className="flex items-center justify-between font-mono text-[11px] text-muted-foreground uppercase border-b border-border/40 pb-4">
             <span>Canvas View // 5 Central Nodes</span>
             <span className="text-accent flex items-center gap-1">
@@ -66,45 +66,50 @@ export function ResearchMap({ topics }: ResearchMapProps) {
             </span>
           </div>
 
-          {/* SVG Connecting Lines */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none stroke-border/60" style={{ zIndex: 1 }}>
+          {/* SVG Connecting Lines with animated energy pulse */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
             {/* Center node to side nodes */}
-            <line x1="50%" y1="22%" x2="20%" y2="48%" strokeDasharray="4 4" strokeWidth="1.5" className="stroke-accent/30" />
-            <line x1="50%" y1="22%" x2="80%" y2="48%" strokeDasharray="4 4" strokeWidth="1.5" className="stroke-accent/30" />
-            <line x1="20%" y1="48%" x2="35%" y2="78%" strokeWidth="1.5" className="stroke-border" />
-            <line x1="80%" y1="48%" x2="65%" y2="78%" strokeWidth="1.5" className="stroke-border" />
-            <line x1="35%" y1="78%" x2="65%" y2="78%" strokeWidth="1.5" className="stroke-border" />
+            <line x1="50%" y1="22%" x2="20%" y2="48%" stroke="var(--accent)" strokeWidth="1.5" opacity="0.6" className="animate-svg-dash" />
+            <line x1="50%" y1="22%" x2="80%" y2="48%" stroke="var(--accent)" strokeWidth="1.5" opacity="0.6" className="animate-svg-dash" />
+            <line x1="20%" y1="48%" x2="35%" y2="78%" stroke="var(--accent)" strokeWidth="1.5" opacity="0.4" className="animate-svg-dash" />
+            <line x1="80%" y1="48%" x2="65%" y2="78%" stroke="var(--accent)" strokeWidth="1.5" opacity="0.4" className="animate-svg-dash" />
+            <line x1="35%" y1="78%" x2="65%" y2="78%" stroke="var(--border)" strokeWidth="1.5" />
           </svg>
 
           {/* Canvas Interactive Nodes */}
           <div className="relative w-full h-[360px] my-auto" style={{ zIndex: 2 }}>
-            {mapNodes.map((node) => {
+            {mapNodes.map((node, i) => {
               const isSelected = activeId === node.id;
               return (
-                <button
+                <motion.button
                   key={node.id}
+                  initial={{ opacity: 0, scale: 0.8, x: '-50%', y: '-50%' }}
+                  whileInView={{ opacity: 1, scale: isSelected ? 1.1 : 1, x: '-50%', y: '-50%' }}
+                  whileHover={{ scale: isSelected ? 1.12 : 1.06, x: '-50%', y: '-50%' }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  transition={{ duration: 0.3, delay: i * 0.06 }}
                   onClick={() => setActiveId(node.id)}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       setActiveId(node.id);
                     }
                   }}
-                  style={{ top: `${node.y}%`, left: `${node.x}%`, transform: 'translate(-50%, -50%)' }}
-                  className={`absolute p-4 rounded-2xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent ${
+                  style={{ top: `${node.y}%`, left: `${node.x}%` }}
+                  className={`absolute p-4 rounded-2xl transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accent ${
                     isSelected
-                      ? 'bg-accent text-accent-foreground shadow-lg shadow-accent/20 scale-110 z-20 border border-accent'
-                      : 'bg-card text-foreground hover:border-accent/60 hover:scale-105 border border-border/80 shadow-sm'
+                      ? 'bg-accent2 text-black font-semibold shadow-lg shadow-amber-500/20 z-20 border border-accent2'
+                      : 'bg-card text-foreground hover:border-accent hover:text-accent border border-border/80 shadow-sm'
                   }`}
                   aria-pressed={isSelected}
                   aria-label={`Explore research topic: ${node.label}`}
                 >
-                  <div className="font-mono text-[10px] tracking-wider uppercase opacity-80 mb-0.5">
+                  <div className={`font-mono text-[10px] tracking-wider uppercase mb-0.5 ${isSelected ? 'text-black/80 font-bold' : 'text-accent'}`}>
                     {node.sub}
                   </div>
                   <div className="font-serif text-sm sm:text-base font-semibold leading-tight whitespace-nowrap">
                     {node.label}
                   </div>
-                </button>
+                </motion.button>
               );
             })}
           </div>

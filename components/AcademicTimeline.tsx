@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { GraduationCap, Briefcase, Award, CheckCircle2 } from 'lucide-react';
 
 interface TimelineItem {
@@ -176,16 +176,24 @@ export function AcademicTimeline({ education, experience }: AcademicTimelineProp
       </div>
 
       {/* Editorial Vertical Timeline */}
-      <div className="relative pl-6 sm:pl-10 border-l border-border/80 space-y-12 my-8">
-        {filteredItems.map((item, idx) => (
-          <motion.div
-            key={item.id}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.5, delay: idx * 0.05 }}
-            className="relative group"
-          >
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeFilter}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -16 }}
+          transition={{ duration: 0.35 }}
+          className="relative pl-6 sm:pl-10 border-l border-border/80 space-y-12 my-8"
+        >
+          {filteredItems.map((item, idx) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, x: -24 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.35, delay: idx * 0.04 }}
+              whileHover={{ y: -3 }}
+              className="relative group"
+            >
             {/* Timeline Circle Bullet */}
             <div
               className={`absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full border-2 transition-all group-hover:scale-125 ${
@@ -230,7 +238,8 @@ export function AcademicTimeline({ education, experience }: AcademicTimelineProp
             </div>
           </motion.div>
         ))}
-      </div>
+        </motion.div>
+      </AnimatePresence>
     </section>
   );
 }

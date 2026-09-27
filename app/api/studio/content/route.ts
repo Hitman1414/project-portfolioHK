@@ -4,20 +4,24 @@ import path from 'path';
 
 const contentDir = path.join(process.cwd(), 'content');
 
-// Helper to safely read a JSON file
+// Safe JSON reader helper
 function readJson(filename: string) {
   const filePath = path.join(contentDir, filename);
   if (!fs.existsSync(filePath)) return null;
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
 
-// Helper to write JSON file
+// JSON writer helper
 function writeJson(filename: string, data: any) {
   const filePath = path.join(contentDir, filename);
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
 }
 
 export async function GET(request: Request) {
+  if (process.env.NODE_ENV !== 'development') {
+    return new NextResponse('Not Found', { status: 404 });
+  }
+
   const { searchParams } = new URL(request.url);
   const type = searchParams.get('type') || 'all';
 
@@ -40,6 +44,10 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
+  if (process.env.NODE_ENV !== 'development') {
+    return new NextResponse('Not Found', { status: 404 });
+  }
+
   try {
     const body = await request.json();
     const { type, content } = body;

@@ -42,7 +42,13 @@ export function InnovationSection({ patents }: InnovationProps) {
         </div>
       </div>
 
-      <div className="glass-panel p-8 sm:p-12 rounded-3xl border border-border/80 relative overflow-hidden bg-tech-grid">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.6 }}
+        className="glass-panel p-8 sm:p-12 rounded-3xl border border-border/80 relative overflow-hidden bg-noise"
+      >
         <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
           <Cpu className="w-64 h-64 text-accent" />
         </div>
@@ -83,7 +89,7 @@ export function InnovationSection({ patents }: InnovationProps) {
             <div>VERIFIED SOURCE: LINKEDIN REGISTERED PATENT</div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

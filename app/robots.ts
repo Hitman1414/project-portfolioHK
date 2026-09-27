@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/studio', '/studio'],
     },
-    sitemap: 'https://harshitakaushik.com/sitemap.xml',
+    sitemap: 'https://project-portfolio-hk.vercel.app/sitemap.xml',
   };
 }

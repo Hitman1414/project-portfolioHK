@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { Search, Filter, ChevronDown, BookOpen, Tag } from 'lucide-react';
+import { Search, Filter, ChevronDown, BookOpen, Tag, Copy, Check } from 'lucide-react';
 
 interface Publication {
   id: string;
@@ -31,6 +31,20 @@ export function PublicationIndex({ publications, showTitle = true }: Publication
   const [selectedYear, setSelectedYear] = useState<string>('ALL');
   const [selectedArea, setSelectedArea] = useState<string>('ALL');
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [copiedId, setCopiedId] = useState<string | null>(null);
+
+  const handleCopyCitation = (pub: Publication, type: 'apa' | 'bibtex') => {
+    let citation = '';
+    if (type === 'apa') {
+      citation = `${pub.authors.join(', ')} (${pub.year}). ${pub.title}. ${pub.venue}.`;
+    } else {
+      const citeKey = `${pub.authors[0]?.split(' ').pop()?.toLowerCase() || 'paper'}${pub.year}`;
+      citation = `@article{${citeKey},\n  title={${pub.title}},\n  author={${pub.authors.join(' and ')}},\n  journal={${pub.venue}},\n  year={${pub.year}}\n}`;
+    }
+    navigator.clipboard.writeText(citation);
+    setCopiedId(`${pub.id}-${type}`);
+    setTimeout(() => setCopiedId(null), 2000);
+  };
 
   // Extract unique years and research areas
   const years = Array.from(new Set(publications.map((p) => p.year.toString()))).sort((a, b) => b.localeCompare(a));
@@ -142,16 +156,27 @@ export function PublicationIndex({ publications, showTitle = true }: Publication
       </div>
 
       {/* Publications Archive Rows */}
-      <div className="divide-y divide-border/60 border-t border-b border-border/60">
-        {filteredPublications.map((pub, idx) => {
-          const isExpanded = expandedId === pub.id;
-          const paperNum = (idx + 1).toString().padStart(2, '0');
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={`${selectedYear}-${selectedArea}-${searchQuery}`}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -12 }}
+          transition={{ duration: 0.3 }}
+          className="divide-y divide-border/60 border-t border-b border-border/60"
+        >
+          {filteredPublications.map((pub, idx) => {
+            const isExpanded = expandedId === pub.id;
+            const paperNum = (idx + 1).toString().padStart(2, '0');
 
-          return (
-            <div
-              key={pub.id}
-              className="group py-6 sm:py-8 transition-colors hover:bg-muted/30"
-            >
+            return (
+              <motion.div
+                key={pub.id}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: idx * 0.03 }}
+                className="group py-6 sm:py-8 transition-colors hover:bg-muted/30"
+              >
               <div
                 onClick={() => setExpandedId(isExpanded ? null : pub.id)}
                 className="cursor-pointer grid grid-cols-1 md:grid-cols-12 gap-4 items-start focus:outline-none"
@@ -175,6 +200,13 @@ export function PublicationIndex({ publications, showTitle = true }: Publication
 
                 {/* Center Title & Tags */}
                 <div className="md:col-span-8 space-y-2">
+                  <div className="flex items-center space-x-2">
+                    {pub.featured && (
+                      <span className="font-mono text-[10px] uppercase font-semibold px-2 py-0.5 rounded-full bg-accent2/10 text-accent2 border border-accent2/30">
+                        ★ FEATURED RESEARCH
+                      </span>
+                    )}
+                  </div>
                   <h3 className="font-serif text-xl sm:text-2xl font-normal text-foreground group-hover:text-accent transition-colors leading-tight">
                     {pub.title}
                   </h3>
@@ -230,11 +262,30 @@ export function PublicationIndex({ publications, showTitle = true }: Publication
                         </div>
                       </div>
 
-                      {/* Action Links */}
-                      <div className="pt-3 flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
-                        <div className="text-muted-foreground text-[11px]">
-                          DOI: {pub.doi || 'Available upon academic request'}
+                      {/* Action Links & Citation Copier */}
+                      <div className="pt-3 flex flex-wrap items-center justify-between gap-4 font-mono text-xs border-t border-border/40">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <button
+                            type="button"
+                            onClick={() => handleCopyCitation(pub, 'apa')}
+                            className="px-3 py-1 rounded-full bg-background border border-border text-foreground hover:border-accent hover:text-accent transition-colors flex items-center space-x-1.5 text-[11px]"
+                            title="Copy APA style citation"
+                          >
+                            {copiedId === `${pub.id}-apa` ? <Check className="w-3 h-3 text-teal-500" /> : <Copy className="w-3 h-3 text-accent" />}
+                            <span>{copiedId === `${pub.id}-apa` ? 'APA Copied!' : 'Copy APA Citation'}</span>
+                          </button>
+
+                          <button
+                            type="button"
+                            onClick={() => handleCopyCitation(pub, 'bibtex')}
+                            className="px-3 py-1 rounded-full bg-background border border-border text-foreground hover:border-accent hover:text-accent transition-colors flex items-center space-x-1.5 text-[11px]"
+                            title="Copy BibTeX code snippet"
+                          >
+                            {copiedId === `${pub.id}-bibtex` ? <Check className="w-3 h-3 text-teal-500" /> : <Copy className="w-3 h-3 text-accent" />}
+                            <span>{copiedId === `${pub.id}-bibtex` ? 'BibTeX Copied!' : 'Copy BibTeX'}</span>
+                          </button>
                         </div>
+
                         <Link
                           href={`/publications/${pub.slug}`}
                           className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-accent text-accent-foreground hover:bg-foreground hover:text-background transition-colors"
@@ -246,7 +297,7 @@ export function PublicationIndex({ publications, showTitle = true }: Publication
                   </motion.div>
                 )}
               </AnimatePresence>
-            </div>
+            </motion.div>
           );
         })}
 
@@ -265,7 +316,8 @@ export function PublicationIndex({ publications, showTitle = true }: Publication
             </button>
           </div>
         )}
-      </div>
+        </motion.div>
+      </AnimatePresence>
     </section>
   );
 }

@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { getPublications, getResearch } from '@/lib/content';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://harshitakaushik.com';
+  const baseUrl = 'https://project-portfolio-hk.vercel.app';
 
   const pubs = getPublications();
   const research = getResearch();

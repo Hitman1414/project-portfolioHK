@@ -25,5 +25,9 @@
     { "name": "Kannada", "proficiency": "Beginner / Elementary" }
   ],
   "heroStatement": "Researching how artificial intelligence and conversational interfaces change customer engagement in digital commerce.",
-  "summary": "Academician and management educator passionate about teaching, student development, and meaningful learning experiences. Currently Assistant Professor at Srinivas University, focusing on nurturing students' academic and personal growth. With a Ph.D. in Management from Tumkur University and an MBA from Banaras Hindu University, her research spans artificial intelligence, conversational commerce, consumer behavior, and targeted marketing."
+  "summary": "Academician and management educator passionate about teaching, student development, and meaningful learning experiences. Currently Assistant Professor at Srinivas University, focusing on nurturing students' academic and personal growth. With a Ph.D. in Management from Tumkur University and an MBA from Banaras Hindu University, her research spans artificial intelligence, conversational commerce, consumer behavior, and targeted marketing.",
+  "photo": {
+    "src": "/images/profile-hero.jpg",
+    "alt": "Portrait of Dr. Harshita Kaushik"
+  }
 }

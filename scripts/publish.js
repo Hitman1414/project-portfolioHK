@@ -4,6 +4,11 @@ console.log('====================================');
 console.log('🚀 Portfolio Studio — Publish Workflow');
 console.log('====================================\n');
 
+if (process.env.VERCEL || process.env.NODE_ENV === 'production') {
+  console.error('❌ Publish workflow is restricted to local development environments only.');
+  process.exit(1);
+}
+
 try {
   console.log('Step 1: Validating content schemas...');
   execSync('node scripts/validate.js', { stdio: 'inherit' });

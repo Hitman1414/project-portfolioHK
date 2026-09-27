@@ -10,11 +10,20 @@ import { motion, AnimatePresence } from 'framer-motion';
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
+    const handleScroll = () => {
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalHeight > 0) {
+        setScrollProgress((window.scrollY / totalHeight) * 100);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   // Close menu on route change
@@ -36,6 +45,11 @@ export function Header() {
   return (
     <>
       <header className="fixed top-0 left-0 w-full z-50 glass-panel border-b border-border/50 transition-colors duration-300">
+        {/* Reading Scroll Progress Line */}
+        <div
+          className="h-[2.5px] bg-accent transition-all duration-150 ease-out"
+          style={{ width: `${scrollProgress}%` }}
+        />
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link
             href="/"
@@ -158,9 +172,6 @@ export function Header() {
 
                 <div className="pt-4 border-t border-border/40 flex items-center justify-between font-mono text-[11px] text-muted-foreground">
                   <span>© 2026 DR. HARSHITA KAUSHIK</span>
-                  <Link href="/studio" className="hover:text-accent underline">
-                    Portfolio Studio ↗
-                  </Link>
                 </div>
               </div>
             </div>

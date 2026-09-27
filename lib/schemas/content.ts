@@ -26,6 +26,7 @@ export const ProfileSchema = z.object({
   ),
   heroStatement: z.string().min(1),
   summary: z.string().min(1),
+  photo: z.object({ src: z.string(), alt: z.string() }).optional(),
 });
 
 export const ResearchNodeSchema = z.object({

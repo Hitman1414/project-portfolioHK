@@ -8,6 +8,7 @@ import {
 } from '@/lib/content';
 import { Download, Printer, GraduationCap, Briefcase, BookOpen, Award, Mail, Phone, MapPin, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
+import { PrintCVButton } from '@/components/PrintCVButton';
 
 export const metadata = {
   title: 'Curriculum Vitae (CV) | Dr. Harshita Kaushik',
@@ -39,10 +40,11 @@ export default function CVPage() {
           </p>
         </div>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex flex-wrap items-center gap-3">
+          <PrintCVButton />
           <Link
             href="/contact"
-            className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full bg-foreground text-background font-mono text-xs uppercase tracking-wider hover:bg-accent hover:text-accent-foreground transition-all"
+            className="no-print inline-flex items-center space-x-2 px-5 py-2.5 rounded-full bg-foreground text-background font-mono text-xs uppercase tracking-wider hover:bg-accent hover:text-accent-foreground transition-all"
           >
             <Mail className="w-3.5 h-3.5" />
             <span>Academic Contact</span>

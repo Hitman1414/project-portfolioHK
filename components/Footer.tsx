@@ -1,10 +1,14 @@
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
+import { MouseGlow } from '@/components/MouseGlow';
+import { AsciiParticleMatrix } from '@/components/AsciiParticleMatrix';
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/60 bg-background/50 pt-20 pb-12 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+    <footer className="relative border-t border-border/60 bg-background/50 pt-20 pb-12 transition-colors duration-300 overflow-hidden z-0">
+      <AsciiParticleMatrix />
+      <MouseGlow />
+      <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
         <div className="md:col-span-6 space-y-6">
           <div className="flex items-center space-x-3">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
@@ -93,9 +97,6 @@ export function Footer() {
             <span>LINKEDIN</span>
             <ArrowUpRight className="w-3 h-3" />
           </a>
-          <Link href="/studio" className="hover:text-accent transition-colors">
-            PORTFOLIO STUDIO
-          </Link>
         </div>
       </div>
     </footer>
