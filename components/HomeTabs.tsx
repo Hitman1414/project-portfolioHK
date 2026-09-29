@@ -30,7 +30,7 @@ export function HomeTabs({ research, publications, experience, education, teachi
   const activeTabObj = tabs.find((t) => t.id === active) || tabs[0];
 
   return (
-    <section className="max-w-6xl mx-auto px-6 py-16 md:py-24">
+    <section id="home-tabs" className="max-w-6xl mx-auto px-6 py-16 md:py-24">
       {/* Tab Controls Bar */}
       <div className="flex flex-wrap items-center gap-2 border-b border-border/80 pb-4 mb-10">
         {tabs.map((t) => {
@@ -222,15 +222,16 @@ export function HomeTabs({ research, publications, experience, education, teachi
               {patents && patents[0] && (
                 <div className="p-8 rounded-2xl glass-panel border border-border/80 space-y-4">
                   <div className="flex flex-wrap items-center gap-3 font-mono text-xs">
-                    <span className="px-3 py-1 rounded-full bg-accent text-accent-foreground font-semibold">
-                      REGISTERED PATENT
-                    </span>
+                    {patents[0].status && (
+                      <span className="px-3 py-1 rounded-full bg-accent text-accent-foreground font-semibold">
+                        {patents[0].status}
+                      </span>
+                    )}
                     {patents[0].category && (
                       <span className="px-3 py-1 rounded-full bg-muted text-muted-foreground border border-border">
                         {patents[0].category}
                       </span>
                     )}
-                    {patents[0].status && <span className="text-muted-foreground">• {patents[0].status}</span>}
                   </div>
 
                   <h4 className="font-serif text-2xl font-normal text-foreground leading-snug">

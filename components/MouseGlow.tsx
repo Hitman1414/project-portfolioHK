@@ -1,49 +1,45 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
-interface MouseGlowProps {
-  className?: string;
-}
-
-export function MouseGlow({ className = '' }: MouseGlowProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [position, setPosition] = useState({ x: -500, y: -500 });
-  const [opacity, setOpacity] = useState(0);
+export function MouseGlow() {
+  const glowRef = useRef<HTMLDivElement>(null);
+  const target = useRef({ x: 0, y: 0 });
+  const current = useRef({ x: 0, y: 0 });
+  const raf = useRef<number>();
 
   useEffect(() => {
-    const parent = containerRef.current?.parentElement;
-    if (!parent) return;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      const rect = parent.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      setPosition({ x, y });
-      setOpacity(1);
+    const handleMove = (e: MouseEvent) => {
+      target.current = { x: e.clientX, y: e.clientY };
     };
+    window.addEventListener('mousemove', handleMove);
 
-    const handleMouseLeave = () => {
-      setOpacity(0);
+    const animate = () => {
+      // Ease toward the cursor rather than snapping — smoother, less jarring near edges
+      current.current.x += (target.current.x - current.current.x) * 0.08;
+      current.current.y += (target.current.y - current.current.y) * 0.08;
+
+      if (glowRef.current) {
+        glowRef.current.style.background = `
+          radial-gradient(700px circle at ${current.current.x}px ${current.current.y}px, var(--accent-glow), transparent 60%),
+          radial-gradient(260px circle at ${current.current.x}px ${current.current.y}px, var(--accent-glow), transparent 70%)
+        `;
+      }
+      raf.current = requestAnimationFrame(animate);
     };
-
-    parent.addEventListener('mousemove', handleMouseMove);
-    parent.addEventListener('mouseleave', handleMouseLeave);
+    raf.current = requestAnimationFrame(animate);
 
     return () => {
-      parent.removeEventListener('mousemove', handleMouseMove);
-      parent.removeEventListener('mouseleave', handleMouseLeave);
+      window.removeEventListener('mousemove', handleMove);
+      if (raf.current) cancelAnimationFrame(raf.current);
     };
   }, []);
 
   return (
     <div
-      ref={containerRef}
-      className={`absolute inset-0 pointer-events-none z-0 transition-opacity duration-500 ease-out ${className}`}
-      style={{
-        opacity,
-        background: `radial-gradient(450px circle at ${position.x}px ${position.y}px, var(--accent-glow) 0%, transparent 70%)`,
-      }}
+      ref={glowRef}
+      className="fixed inset-0 pointer-events-none z-10 opacity-80"
+      aria-hidden="true"
     />
   );
 }

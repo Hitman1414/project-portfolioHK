@@ -58,7 +58,7 @@ export function ResearchMap({ topics }: ResearchMapProps) {
       {/* Desktop Canvas Visualization */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         {/* Visual Map Canvas (Desktop/Tablet) */}
-        <div className="lg:col-span-7 glass-panel rounded-3xl p-6 sm:p-8 relative min-h-[460px] flex flex-col justify-between overflow-hidden bg-noise">
+        <div className="lg:col-span-7 glass-panel rounded-3xl p-6 sm:p-8 relative min-h-[460px] flex flex-col justify-between overflow-hidden">
           <div className="flex items-center justify-between font-mono text-[11px] text-muted-foreground uppercase border-b border-border/40 pb-4">
             <span>Canvas View // 5 Central Nodes</span>
             <span className="text-accent flex items-center gap-1">

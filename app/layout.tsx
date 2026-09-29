@@ -4,6 +4,7 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { SmoothScroll } from '@/components/SmoothScroll';
+import { MouseGlow } from '@/components/MouseGlow';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://project-portfolio-hk.vercel.app'),
@@ -54,6 +55,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-accent-foreground">
+        <MouseGlow />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <SmoothScroll>
             <div className="flex flex-col min-h-screen">

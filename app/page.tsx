@@ -21,9 +21,7 @@ export default function HomePage() {
 
   return (
     <div className="relative">
-      <section className="bg-background">
-        <HeroExperience profile={profile} />
-      </section>
+      <HeroExperience profile={profile} />
 
       <HomeTabs
         research={research}

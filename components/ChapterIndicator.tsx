@@ -15,7 +15,7 @@ const chapters: Chapter[] = [
   { id: 'publications-archive', num: '02', label: 'PEER-REVIEWED PUBLICATIONS', shortLabel: 'PUBLICATIONS' },
   { id: 'academic-timeline', num: '03', label: 'ACADEMIC & PROFESSIONAL JOURNEY', shortLabel: 'TIMELINE' },
   { id: 'teaching-index', num: '04', label: 'MBA PEDAGOGY & COURSE INDEX', shortLabel: 'PEDAGOGY' },
-  { id: 'innovation-patents', num: '05', label: 'REGISTERED PATENTS & IOT TECH', shortLabel: 'PATENTS' },
+  { id: 'innovation-patents', num: '05', label: 'PATENTS & IOT TECH', shortLabel: 'PATENTS' },
 ];
 
 export function ChapterIndicator() {

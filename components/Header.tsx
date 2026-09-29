@@ -44,7 +44,7 @@ export function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-50 glass-panel border-b border-border/50 transition-colors duration-300">
+      <header id="top" className="fixed top-0 left-0 w-full z-50 glass-panel border-b border-border/50 transition-colors duration-300">
         {/* Reading Scroll Progress Line */}
         <div
           className="h-[2.5px] bg-accent transition-all duration-150 ease-out"

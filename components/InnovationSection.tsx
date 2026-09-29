@@ -37,9 +37,11 @@ export function InnovationSection({ patents }: InnovationProps) {
             Intellectual property and hardware-software system design for hyperlocal inventory synchronization.
           </p>
         </div>
-        <div className="font-mono text-xs text-accent bg-accent/10 px-4 py-2 rounded-full border border-accent/30 font-semibold">
-          REGISTERED PATENT{patent.year ? ` // ${patent.year}` : ''}
-        </div>
+        {patent.status && (
+          <div className="font-mono text-xs text-accent bg-accent/10 px-4 py-2 rounded-full border border-accent/30 font-semibold">
+            {patent.status}{patent.year ? ` // ${patent.year}` : ''}
+          </div>
+        )}
       </div>
 
       <motion.div
@@ -47,7 +49,7 @@ export function InnovationSection({ patents }: InnovationProps) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.1 }}
         transition={{ duration: 0.6 }}
-        className="glass-panel p-8 sm:p-12 rounded-3xl border border-border/80 relative overflow-hidden bg-noise"
+        className="glass-panel p-8 sm:p-12 rounded-3xl border border-border/80 relative overflow-hidden"
       >
         <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
           <Cpu className="w-64 h-64 text-accent" />
@@ -92,7 +94,7 @@ export function InnovationSection({ patents }: InnovationProps) {
 
           <div className="pt-4 flex flex-wrap items-center justify-between font-mono text-xs text-muted-foreground border-t border-border/40">
             {patent.inventors && patent.inventors.length > 0 && <div>INVENTORS: {patent.inventors.join(', ')}</div>}
-            <div>VERIFIED SOURCE: LINKEDIN REGISTERED PATENT</div>
+            <div>VERIFIED SOURCE: INTELLECTUAL PROPERTY FILING</div>
           </div>
         </div>
       </motion.div>

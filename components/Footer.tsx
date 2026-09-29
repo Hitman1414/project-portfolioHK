@@ -1,17 +1,26 @@
 import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
-import { MouseGlow } from '@/components/MouseGlow';
+import { ArrowUpRight, ArrowUp } from 'lucide-react';
 
 export function Footer() {
   return (
     <footer className="relative border-t border-border/60 bg-background/50 pt-20 pb-12 transition-colors duration-300 overflow-hidden z-0">
-      <MouseGlow />
+      {/* Large faint background wordmark */}
+      <div
+        aria-hidden="true"
+        className="absolute -bottom-10 right-4 sm:right-10 font-serif italic text-[13rem] sm:text-[16rem] leading-none pointer-events-none select-none z-0"
+        style={{ color: 'var(--accent)', opacity: 0.12 }}
+      >
+        HK
+      </div>
+
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
         <div className="md:col-span-6 space-y-6">
           <div className="flex items-center space-x-3">
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+            <span className="flex items-center justify-center w-7 h-7 rounded-md bg-accent text-accent-foreground font-serif text-[11px] font-semibold tracking-wide">
+              HK
+            </span>
             <span className="font-mono text-xs text-accent tracking-widest uppercase font-semibold">
-              Research & Academic Profile
+              Research &amp; Academic Profile
             </span>
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl font-normal tracking-tight text-foreground">
@@ -32,47 +41,19 @@ export function Footer() {
         </div>
 
         <div className="md:col-span-3 space-y-4">
-          <h3 className="font-mono text-xs tracking-widest text-muted-foreground uppercase mb-4">
-            Navigation
-          </h3>
+          <h3 className="font-mono text-xs tracking-widest text-muted-foreground uppercase mb-4">Navigation</h3>
           <ul className="space-y-2.5 font-mono text-xs">
-            <li>
-              <Link href="/research" className="hover:text-accent transition-colors">
-                01 RESEARCH MAP
-              </Link>
-            </li>
-            <li>
-              <Link href="/publications" className="hover:text-accent transition-colors">
-                02 PUBLICATIONS ARCHIVE
-              </Link>
-            </li>
-            <li>
-              <Link href="/teaching" className="hover:text-accent transition-colors">
-                03 TEACHING INDEX
-              </Link>
-            </li>
-            <li>
-              <Link href="/experience" className="hover:text-accent transition-colors">
-                04 ACADEMIC JOURNEY
-              </Link>
-            </li>
-            <li>
-              <Link href="/patents" className="hover:text-accent transition-colors">
-                05 PATENT & INNOVATION
-              </Link>
-            </li>
-            <li>
-              <Link href="/cv" className="hover:text-accent transition-colors">
-                06 ACADEMIC CV
-              </Link>
-            </li>
+            <li><Link href="/research" className="hover:text-accent transition-colors">01 RESEARCH MAP</Link></li>
+            <li><Link href="/publications" className="hover:text-accent transition-colors">02 PUBLICATIONS ARCHIVE</Link></li>
+            <li><Link href="/teaching" className="hover:text-accent transition-colors">03 TEACHING INDEX</Link></li>
+            <li><Link href="/experience" className="hover:text-accent transition-colors">04 ACADEMIC JOURNEY</Link></li>
+            <li><Link href="/patents" className="hover:text-accent transition-colors">05 PATENT &amp; INNOVATION</Link></li>
+            <li><Link href="/cv" className="hover:text-accent transition-colors">06 ACADEMIC CV</Link></li>
           </ul>
         </div>
 
         <div className="md:col-span-3 space-y-4">
-          <h3 className="font-mono text-xs tracking-widest text-muted-foreground uppercase mb-4">
-            Academic Credentials
-          </h3>
+          <h3 className="font-mono text-xs tracking-widest text-muted-foreground uppercase mb-4">Academic Credentials</h3>
           <ul className="space-y-2 font-mono text-xs text-muted-foreground">
             <li>Ph.D. Management · Tumkur University</li>
             <li>MBA Marketing · BHU Varanasi</li>
@@ -83,7 +64,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 pt-8 border-t border-border/40 flex flex-col sm:flex-row items-center justify-between font-mono text-[11px] text-muted-foreground space-y-4 sm:space-y-0">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-8 border-t border-border/40 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px] text-muted-foreground">
         <div>© 2026 DR. HARSHITA KAUSHIK. ALL RIGHTS RESERVED.</div>
         <div className="flex items-center space-x-6">
           <a
@@ -94,6 +75,10 @@ export function Footer() {
           >
             <span>LINKEDIN</span>
             <ArrowUpRight className="w-3 h-3" />
+          </a>
+          <a href="#top" className="hover:text-accent transition-colors flex items-center space-x-1">
+            <span>BACK TO TOP</span>
+            <ArrowUp className="w-3 h-3" />
           </a>
         </div>
       </div>
