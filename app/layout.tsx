@@ -22,6 +22,10 @@ export const metadata: Metadata = {
     'E-Commerce Research',
   ],
   authors: [{ name: 'Dr. Harshita Kaushik' }],
+  icons: {
+    icon: [{ url: '/icon.svg', type: 'image/svg+xml' }],
+    apple: [{ url: '/apple-icon.png' }],
+  },
   openGraph: {
     title: 'Dr. Harshita Kaushik | Academic & Research Portfolio',
     description:
